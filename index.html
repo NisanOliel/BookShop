@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+
+    <title>Book shop</title>
+</head>
+
+<body class=" bg-info text-center" onload=" onInit()">
+
+    <h1 data-trans="title">Book shop📚</h1>
+
+
+    <div class="box container-xl  ">
+        <button class="btn btn-light btn-outline-secondary text-black " data-trans="add-new-book"
+            onclick="onAddBook()">add new
+            book</button>
+
+        <section class="book-filter">
+
+            <div class="language form-select-sm mb-2">
+                <select onchange="onSetLang(this.value)">
+                    <option value="en">English</option>
+                    <option value="he">עברית</option>
+                </select>
+            </div>
+            <div class="bg-light p-2 " tex>
+                <label data-trans="search-book">Search book: </label>
+                <input data-trans="add-todo-placeholder" type="text" name="filter-name"
+                    oninput="onSetFilterBy({name: this.value})" placeholder="Start typing..." />
+                <label for="filter-price" data-trans="max-price">
+                    Max Price:
+                </label>
+                <input name="filer-price" type="range" min="1" max="50" value="50" class="filter-price-range"
+                    onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})" />
+
+            </div>
+        </section>
+        <table class="table table-light table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th data-trans="id">ID</th>
+                    <th data-trans="title-book">Title</th>
+                    <th data-trans="price">Price</th>
+                    <th data-trans="action" colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <div class="page-btns">
+            <button class="prev btn-light" disabled onclick="onMoveToPage('-', this)">&lt;&lt;</button>
+            <span></span>
+            <button class="next btn-light" onclick="onMoveToPage('+', this)">&gt;&gt;</button>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white" data-trans="by-nisan">Nisan oliel</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="js/services/util.service.js"></script>
+    <script src="js/i18n-service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/books.service.js"></script>
+    <script src="js/books.controller.js"></script>
+
+</body>
+
+
+</html>

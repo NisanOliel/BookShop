@@ -1,0 +1,25 @@
+body {
+    overflow-x: hidden;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+body.rtl {
+    direction: rtl;
+}
+
+h1 {
+    font-family: 'Black Ops One', cursive;
+    font-size: 40px;
+}
+
+
+thead {
+    font-size: larger;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
